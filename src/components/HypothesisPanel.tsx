@@ -28,30 +28,30 @@ export function HypothesisPanel({ hypotheses, ledger }: HypothesisPanelProps) {
     switch (status) {
       case HypothesisStatus.SUPPORTED:
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold font-mono bg-emerald-950/80 text-emerald-300 border border-emerald-700/80">
-            <CheckCircle2 className="h-3 w-3" />
-            SUPPORTED BY EVIDENCE
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold font-mono bg-emerald-950/80 text-emerald-300 border border-emerald-700/80">
+            <CheckCircle2 className="h-3.5 w-3.5" />
+            SUPPORTED
           </span>
         );
       case HypothesisStatus.REJECTED:
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold font-mono bg-rose-950/80 text-rose-300 border border-rose-700/80">
-            <XCircle className="h-3 w-3" />
-            REFUTED / CONTRADICTED
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold font-mono bg-rose-950/80 text-rose-300 border border-rose-700/80">
+            <XCircle className="h-3.5 w-3.5" />
+            REFUTED / FALSIFIED
           </span>
         );
       case HypothesisStatus.UNRESOLVED:
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold font-mono bg-amber-950/80 text-amber-300 border border-amber-700/80">
-            <HelpCircle className="h-3 w-3" />
-            INSUFFICIENT / UNRESOLVED
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold font-mono bg-amber-950/80 text-amber-300 border border-amber-700/80">
+            <HelpCircle className="h-3.5 w-3.5" />
+            UNRESOLVED
           </span>
         );
       default:
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold font-mono bg-slate-850 text-slate-400 border border-slate-700">
-            <Clock className="h-3 w-3" />
-            PENDING EVALUATION
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold font-mono bg-slate-900 text-slate-400 border border-white/10">
+            <Clock className="h-3.5 w-3.5" />
+            PENDING
           </span>
         );
     }
@@ -66,76 +66,72 @@ export function HypothesisPanel({ hypotheses, ledger }: HypothesisPanelProps) {
       case EvidenceVerdict.INCONCLUSIVE:
         return "text-amber-300 border-amber-800/80 bg-amber-950/30";
       default:
-        return "text-slate-400 border-slate-800 bg-slate-900";
+        return "text-slate-400 border-white/10 bg-slate-900";
     }
   };
 
-  // Find leading hypotheses for the challenge section
   const oneOffHyp = hypotheses.find((h) => h.category === "ONE_OFF_FINANCIAL_EVENT");
 
   return (
-    <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 md:p-6 shadow-xl space-y-5">
-      {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between pb-3.5 border-b border-slate-800 gap-2">
+    <div className="rounded-3xl glass-panel p-6 sm:p-8 overflow-hidden shadow-2xl border border-white/10 space-y-6">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-white/10 gap-3">
         <div>
-          <span className="text-xs font-mono uppercase tracking-wider text-slate-400">
-            Step 3 · Competing Explanations & Empirical Falsification
+          <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-semibold block">
+            Cognitive Exploration & Empirical Testing
           </span>
-          <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2 mt-0.5">
+          <h3 className="text-base sm:text-lg font-bold text-white font-mono flex items-center gap-2 mt-0.5">
             <Lightbulb className="h-4 w-4 text-violet-400" />
-            Falsifiable Hypotheses & Stress-Testing
+            Competing Hypotheses & Falsification
           </h3>
         </div>
-        <span className="text-[11px] text-slate-400 bg-slate-950 px-3 py-1 rounded-lg border border-slate-800 font-mono">
-          Axiom: Hypotheses are propositions; deterministic evidence decides truth
+        <span className="text-xs font-mono text-slate-400 px-3 py-1 rounded-full bg-slate-950 border border-white/10">
+          Hypotheses are propositions; deterministic evidence decides truth
         </span>
       </div>
 
-      {/* Signature Phase 7: Falsification & Challenge Banner */}
-      <div className="p-4 sm:p-5 rounded-xl border border-violet-850 bg-gradient-to-r from-violet-950/30 via-slate-950 to-slate-950 text-xs">
-        <div className="flex items-center gap-2 text-violet-300 font-mono font-bold uppercase tracking-wider text-[11px] mb-2">
+      {/* Signature Falsification Challenge Card */}
+      <div className="rounded-2xl border border-violet-800/40 bg-gradient-to-r from-violet-950/30 via-slate-950/80 to-slate-950 p-5 space-y-4">
+        <div className="flex items-center gap-2 text-violet-300 font-mono font-bold uppercase tracking-wider text-xs">
           <Flame className="h-4 w-4 text-violet-400" />
           <span>Forensic Falsification Challenge</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 pt-1">
-          {/* Challenge Thesis */}
-          <div className="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
-            <span className="text-[10px] font-mono uppercase text-slate-500 block font-bold mb-1">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <div className="bg-slate-900/80 border border-white/10 rounded-xl p-4 space-y-1.5">
+            <span className="text-[10px] font-mono uppercase text-slate-400 font-bold block">
               Challenge Question
             </span>
-            <p className="text-slate-200 text-xs leading-relaxed font-sans">
+            <p className="text-slate-200 leading-relaxed font-sans">
               Could the observed peer divergence be caused by an isolated non-operating accounting gain, reporting period shift, or stub quarter?
             </p>
           </div>
 
-          {/* Tested Against */}
-          <div className="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
-            <span className="text-[10px] font-mono uppercase text-slate-500 block font-bold mb-1">
+          <div className="bg-slate-900/80 border border-white/10 rounded-xl p-4 space-y-1.5">
+            <span className="text-[10px] font-mono uppercase text-slate-400 font-bold block">
               Tested Against
             </span>
-            <ul className="text-slate-300 text-xs space-y-1 font-mono">
+            <ul className="text-slate-300 space-y-1 font-mono text-[11px]">
               <li className="flex items-center gap-1.5">
-                <FileCheck className="h-3 w-3 text-cyan-400" />
+                <FileCheck className="h-3.5 w-3.5 text-cyan-400 shrink-0" />
                 <span>Operating Earnings vs Revenue</span>
               </li>
               <li className="flex items-center gap-1.5">
-                <FileCheck className="h-3 w-3 text-cyan-400" />
+                <FileCheck className="h-3.5 w-3.5 text-cyan-400 shrink-0" />
                 <span>YoY Quarterly Momentum</span>
               </li>
               <li className="flex items-center gap-1.5">
-                <FileCheck className="h-3 w-3 text-cyan-400" />
+                <FileCheck className="h-3.5 w-3.5 text-cyan-400 shrink-0" />
                 <span>3-Period Consecutive CAGR</span>
               </li>
             </ul>
           </div>
 
-          {/* Falsification Result */}
-          <div className="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
-            <span className="text-[10px] font-mono uppercase text-slate-500 block font-bold mb-1">
+          <div className="bg-slate-900/80 border border-white/10 rounded-xl p-4 space-y-1.5">
+            <span className="text-[10px] font-mono uppercase text-slate-400 font-bold block">
               Falsification Result
             </span>
-            <p className="text-xs leading-relaxed font-sans">
+            <p className="leading-relaxed font-sans">
               {oneOffHyp?.status === HypothesisStatus.REJECTED ? (
                 <span className="text-emerald-300 font-medium">
                   One-off paper spike hypothesis was <strong>refuted</strong> by proportional operating earnings expansion and multi-year persistence.
@@ -154,10 +150,9 @@ export function HypothesisPanel({ hypotheses, ledger }: HypothesisPanelProps) {
         </div>
       </div>
 
-      {/* Hypothesis Cards Grid */}
-      <div className="space-y-3.5">
+      {/* Hypotheses List */}
+      <div className="space-y-4">
         {hypotheses.map((h, idx) => {
-          // Find matching evidence ledger entries
           const matchingLedgerEntries =
             ledger?.filter(
               (e) =>
@@ -169,45 +164,45 @@ export function HypothesisPanel({ hypotheses, ledger }: HypothesisPanelProps) {
           return (
             <div
               key={h.id}
-              className="bg-slate-950/80 border border-slate-800 rounded-xl p-4 transition-all hover:border-slate-700"
+              className="bg-slate-950/70 border border-white/10 rounded-2xl p-5 hover:border-violet-500/30 transition-all space-y-3.5"
             >
-              {/* Header row */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2.5 border-b border-slate-850">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="font-mono text-xs px-2 py-0.5 bg-slate-800 text-violet-300 rounded font-bold">
+              {/* Header */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-white/5">
+                <div className="flex items-center gap-2.5 flex-wrap">
+                  <span className="font-mono text-xs px-2.5 py-0.5 rounded-lg bg-violet-950/80 border border-violet-800/60 text-violet-300 font-bold">
                     H{idx + 1}
                   </span>
-                  <h4 className="text-sm font-semibold text-white tracking-tight">
+                  <h4 className="text-sm sm:text-base font-semibold text-white font-mono">
                     {h.title}
                   </h4>
-                  <span className="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
+                  <span className="text-[10px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-white/10">
                     {h.category}
                   </span>
                 </div>
                 {getStatusBadge(h.status)}
               </div>
 
-              {/* Hypothesis statement */}
-              <p className="text-xs text-slate-300 mt-2.5 leading-relaxed font-sans">
+              {/* Description */}
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
                 {h.description}
               </p>
 
-              {/* Plausibility & Required Audit Proof */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-3 text-xs">
-                <div className="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/80">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1 font-mono">
-                    Plausibility Thesis:
+              {/* Plausibility & Verification Tool */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs pt-1">
+                <div className="bg-slate-900/60 p-3 rounded-xl border border-white/5 space-y-1">
+                  <span className="text-[10px] font-mono uppercase text-slate-400 font-bold block">
+                    Plausibility Argument:
                   </span>
-                  <span className="text-slate-300 text-xs leading-normal block font-sans">
+                  <p className="text-slate-300 leading-relaxed font-sans">
                     {h.whyPlausible}
-                  </span>
+                  </p>
                 </div>
 
-                <div className="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/80">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1 font-mono">
-                    Requested Verification Tool:
+                <div className="bg-slate-900/60 p-3 rounded-xl border border-white/5 space-y-1">
+                  <span className="text-[10px] font-mono uppercase text-slate-400 font-bold block">
+                    Verification Tool Requested:
                   </span>
-                  <span className="text-slate-300 text-xs leading-normal block font-mono">
+                  <span className="text-slate-300 font-mono block">
                     {h.requiredEvidence}
                   </span>
                 </div>
@@ -215,8 +210,8 @@ export function HypothesisPanel({ hypotheses, ledger }: HypothesisPanelProps) {
 
               {/* Qualitative LLM Notes if present */}
               {h.falsificationNotes && (
-                <div className="mt-2.5 p-2 rounded-lg bg-violet-950/20 border border-violet-900/40 text-[11px] text-violet-300 flex items-start gap-1.5 font-sans">
-                  <BrainCircuit className="h-3.5 w-3.5 text-violet-400 shrink-0 mt-0.5" />
+                <div className="p-3 rounded-xl bg-violet-950/20 border border-violet-900/30 text-xs text-violet-300 flex items-start gap-2">
+                  <BrainCircuit className="h-4 w-4 text-violet-400 shrink-0 mt-0.5" />
                   <div>
                     <strong className="font-semibold text-violet-200">
                       Cognitive Cross-Examination:
@@ -228,16 +223,16 @@ export function HypothesisPanel({ hypotheses, ledger }: HypothesisPanelProps) {
 
               {/* Tested Evidence Items */}
               {matchingLedgerEntries.length > 0 && (
-                <div className="mt-3 pt-3 border-t border-slate-900 space-y-2">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block font-mono">
-                    Tested Audit Proof Points ({matchingLedgerEntries.length})
+                <div className="pt-2 space-y-2 border-t border-white/5">
+                  <span className="text-[10px] font-mono uppercase text-slate-400 font-bold tracking-wider block">
+                    Empirical Proof Points ({matchingLedgerEntries.length})
                   </span>
                   {matchingLedgerEntries.map((ev) => (
                     <div
                       key={ev.evidenceId}
-                      className={`p-2.5 rounded-lg border text-xs ${getVerdictStyle(ev.verdict)}`}
+                      className={`p-3 rounded-xl border text-xs ${getVerdictStyle(ev.verdict)}`}
                     >
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-1 border-b border-current/20">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-1.5 border-b border-current/20">
                         <span className="font-semibold font-mono text-[11px]">
                           VERDICT: {ev.verdict} (Confidence: {ev.confidence})
                         </span>
@@ -245,7 +240,7 @@ export function HypothesisPanel({ hypotheses, ledger }: HypothesisPanelProps) {
                           Source: {ev.sourceDataProvenance}
                         </span>
                       </div>
-                      <p className="mt-1.5 text-slate-200 text-xs leading-normal font-sans">
+                      <p className="mt-2 text-slate-200 text-xs leading-relaxed font-sans">
                         {ev.observation}
                       </p>
                     </div>

@@ -10,6 +10,7 @@ import {
   AlertCircle,
   ShieldCheck,
   BrainCircuit,
+  Activity,
 } from "lucide-react";
 
 interface AuditTimelineProps {
@@ -39,7 +40,7 @@ function resolveStepSemantic(step: AuditTraceStep): StepSemantic {
       stage: "ACTION",
       label: "Validate Investigation Scope & Cohort",
       isCognitive: false,
-      color: "border-slate-700 text-slate-400 bg-slate-900/60",
+      color: "border-slate-700 text-slate-300 bg-slate-900/60",
     };
   }
   if (sid.includes("STEP_02")) {
@@ -48,52 +49,52 @@ function resolveStepSemantic(step: AuditTraceStep): StepSemantic {
           stage: "ACTION",
           label: "Query Sectors Fundamentals",
           isCognitive: false,
-          color: "border-cyan-800 text-cyan-400 bg-cyan-950/40",
+          color: "border-cyan-800 text-cyan-300 bg-cyan-950/40",
         }
       : {
           stage: "OBSERVATION",
-          label: "Audited Fundamentals Retrieved",
+          label: "Audited Fundamentals Ingested",
           isCognitive: false,
-          color: "border-blue-800 text-blue-400 bg-blue-950/40",
+          color: "border-blue-800 text-blue-300 bg-blue-950/40",
         };
   }
   if (sid.includes("STEP_03")) {
     return isStarted
       ? {
           stage: "ANALYSIS",
-          label: "Revenue Growth Compared Deterministically",
+          label: "Revenue Growth Calculated Deterministically",
           isCognitive: false,
-          color: "border-indigo-800 text-indigo-400 bg-indigo-950/40",
+          color: "border-indigo-800 text-indigo-300 bg-indigo-950/40",
         }
       : {
           stage: "DETECTION",
           label: "Peer Outlier Dispersion Evaluated",
           isCognitive: false,
-          color: "border-purple-800 text-purple-400 bg-purple-950/40",
+          color: "border-purple-800 text-purple-300 bg-purple-950/40",
         };
   }
   if (sid.includes("STEP_04")) {
     return {
       stage: "PLAN",
-      label: "Competing Hypotheses Generated (Call 1)",
+      label: "Hypotheses & Tool Requests Formulated (Call 1)",
       isCognitive: true,
-      color: "border-amber-800 text-amber-400 bg-amber-950/40",
+      color: "border-amber-800 text-amber-300 bg-amber-950/40",
     };
   }
   if (sid.includes("STEP_05")) {
     return {
       stage: "CHALLENGE",
-      label: "Attempting to Falsify Leading Explanations (Call 2)",
+      label: "Falsifying Leading Explanations (Call 2)",
       isCognitive: true,
-      color: "border-orange-800 text-orange-400 bg-orange-950/40",
+      color: "border-orange-800 text-orange-300 bg-orange-950/40",
     };
   }
   if (sid.includes("STEP_06")) {
     return {
       stage: "OBSERVATION",
-      label: "Evidence Ledger Updated & Verified",
+      label: "Evidence Ledger Provenance Verified",
       isCognitive: false,
-      color: "border-teal-800 text-teal-400 bg-teal-950/40",
+      color: "border-teal-800 text-teal-300 bg-teal-950/40",
     };
   }
   if (sid.includes("STEP_07")) {
@@ -101,7 +102,7 @@ function resolveStepSemantic(step: AuditTraceStep): StepSemantic {
       stage: "CONCLUSION",
       label: "Deterministic Classification Locked",
       isCognitive: false,
-      color: "border-emerald-800 text-emerald-400 bg-emerald-950/40",
+      color: "border-emerald-800 text-emerald-300 bg-emerald-950/40",
     };
   }
 
@@ -109,7 +110,7 @@ function resolveStepSemantic(step: AuditTraceStep): StepSemantic {
     stage: "ACTION",
     label: step.stepName,
     isCognitive: false,
-    color: "border-slate-800 text-slate-400 bg-slate-900/60",
+    color: "border-slate-800 text-slate-300 bg-slate-900/60",
   };
 }
 
@@ -117,28 +118,28 @@ export function AuditTimeline({ trace }: AuditTimelineProps) {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 sm:p-6 shadow-xl">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-800">
+    <div className="rounded-3xl glass-panel p-6 sm:p-8 overflow-hidden shadow-2xl border border-white/10 space-y-5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/10">
         <div>
           <div className="flex items-center gap-2">
-            <Terminal className="h-5 w-5 text-cyan-400" />
-            <h3 className="text-sm sm:text-base font-bold text-white tracking-wide">
+            <Activity className="h-4 w-4 text-violet-400" />
+            <h3 className="text-base sm:text-lg font-bold text-white font-mono tracking-tight">
               Agent Execution Audit Trace ({trace.length} State Transitions)
             </h3>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-400 mt-1 font-sans">
             Authentic provenance log: query $\rightarrow$ deterministic detection $\rightarrow$ cognitive plan $\rightarrow$ empirical falsification $\rightarrow$ locked verdict.
           </p>
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-slate-800 text-cyan-300 border border-slate-700">
-            SignalLens is an investigation agent, not a chatbot
+          <span className="text-[11px] font-mono px-3 py-1 rounded-full bg-slate-950 text-violet-300 border border-white/10">
+            Autonomous Investigation Instrument
           </span>
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-900 border border-white/5 transition-colors cursor-pointer"
             title={isOpen ? "Collapse trace" : "Expand trace"}
           >
             {isOpen ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
@@ -147,62 +148,62 @@ export function AuditTimeline({ trace }: AuditTimelineProps) {
       </div>
 
       {isOpen && (
-        <div className="mt-5 space-y-3 font-mono text-xs">
+        <div className="space-y-3 font-mono text-xs">
           {trace.map((step, idx) => {
             const semantic = resolveStepSemantic(step);
             return (
               <div
                 key={idx}
-                className="p-3.5 rounded-xl bg-slate-950/90 border border-slate-800/90 hover:border-slate-700 transition-colors flex flex-col md:flex-row md:items-start justify-between gap-3"
+                className="p-4 rounded-2xl bg-slate-950/80 border border-white/10 hover:border-white/20 transition-colors flex flex-col md:flex-row md:items-start justify-between gap-3"
               >
-                <div className="flex items-start gap-3 min-w-0">
+                <div className="flex items-start gap-3.5 min-w-0">
                   <div className="mt-0.5 shrink-0">
                     {step.status === "COMPLETED" ? (
                       <CheckCircle2 className="h-4 w-4 text-emerald-400" />
                     ) : step.status === "WARNING" ? (
                       <AlertCircle className="h-4 w-4 text-amber-400" />
                     ) : (
-                      <div className="h-4 w-4 rounded-full border-2 border-cyan-400 border-t-transparent animate-spin" />
+                      <div className="h-4 w-4 rounded-full border-2 border-violet-400 border-t-transparent animate-spin" />
                     )}
                   </div>
 
-                  <div className="min-w-0 space-y-1">
+                  <div className="min-w-0 space-y-1.5">
                     <div className="flex flex-wrap items-center gap-2">
                       <span
-                        className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${semantic.color}`}
+                        className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full border uppercase tracking-wider ${semantic.color}`}
                       >
                         {semantic.stage}
                       </span>
-                      <span className="text-white font-semibold text-xs tracking-tight">
+                      <span className="text-white font-semibold text-xs font-mono">
                         {semantic.label}
                       </span>
                       {semantic.isCognitive && (
-                        <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20 font-sans">
-                          <BrainCircuit className="h-3 w-3" /> Bounded LLM Loop
+                        <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30 font-sans">
+                          <BrainCircuit className="h-3 w-3" /> Cognitive Loop
                         </span>
                       )}
                       {!semantic.isCognitive && (
-                        <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-sans">
-                          <ShieldCheck className="h-3 w-3" /> Deterministic Authority
+                        <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 font-sans">
+                          <ShieldCheck className="h-3 w-3" /> Deterministic
                         </span>
                       )}
                     </div>
 
-                    <p className="text-slate-300 text-xs leading-relaxed font-sans pt-0.5">
+                    <p className="text-slate-300 text-xs leading-relaxed font-sans">
                       {step.details}
                     </p>
 
                     {step.toolCall && (
-                      <div className="mt-2 p-2 rounded-lg bg-slate-900 border border-slate-800 text-[11px] text-slate-400 space-y-1">
-                        <div className="flex items-center gap-1 text-cyan-300 font-semibold">
+                      <div className="mt-2.5 p-3 rounded-xl bg-slate-900/90 border border-white/5 text-[11px] text-slate-300 space-y-1">
+                        <div className="flex items-center gap-1.5 text-cyan-300 font-semibold font-mono">
                           <Terminal className="h-3.5 w-3.5" />
                           <span>Tool Invocation: {step.toolCall.toolName}</span>
                         </div>
-                        <div className="text-[10px] text-slate-400 overflow-x-auto">
+                        <div className="text-[10px] text-slate-400 overflow-x-auto font-mono">
                           params: {JSON.stringify(step.toolCall.params)}
                         </div>
                         {step.toolCall.resultSummary && (
-                          <div className="text-[10px] text-slate-400 italic">
+                          <div className="text-[10px] text-slate-300 italic font-mono">
                             result: {step.toolCall.resultSummary}
                           </div>
                         )}

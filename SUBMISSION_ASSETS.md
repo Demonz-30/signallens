@@ -161,7 +161,7 @@ If you ask ChatGPT, it hallucinates a persuasive marketing story. In finance, un
 🔹 Deterministic rate-of-change and peer dispersion math
 🔹 Bounded 2-call LLM cognitive loop via OpenAI Responses API
 🔹 Strict allowlisted verification tool execution
-🔹 Immutable Evidence Ledger with cryptographic provenance
+🔹 Audit-grade Evidence Ledger with authentic source provenance
 🔹 Locked neutral classifications — zero LLM hallucination of verdicts
 
 Because:

@@ -200,7 +200,7 @@ The UI provides pre-configured presets for a **90-second judging presentation**:
 5. **Live Sectors REST v2 Mode (Real IDX Data)**
    - Click the **Live Sectors REST v2** toggle in the header.
    - Enter `BBCA` (real audited financials parsed $\rightarrow$ `INSUFFICIENT_EVIDENCE` because granular CASA fee breakdowns require exchange footnotes).
-   - Shows real HTTP queries to Sectors REST v2 with complete cryptographic provenance.
+   - Shows real HTTP queries to Sectors REST v2 with complete authentic source provenance.
 
 ---
 

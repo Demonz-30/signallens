@@ -80,7 +80,7 @@ export function EvidenceLedgerTable({ ledger }: EvidenceLedgerTableProps) {
       <div className="flex flex-col md:flex-row md:items-center justify-between pb-3.5 border-b border-slate-800 gap-2">
         <div>
           <span className="text-xs font-mono uppercase tracking-wider text-slate-400">
-            Step 4 · Immutable Evidence Ledger
+            Step 4 · Evidence Ledger
           </span>
           <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2 mt-0.5">
             <FileText className="h-4 w-4 text-violet-400" />
