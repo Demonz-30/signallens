@@ -270,7 +270,7 @@ export class AgentOrchestrator {
       "STEP_06_LEDGER_COMPILATION",
       "Synthesize Evidence Ledger",
       "STARTED",
-      "Compiling immutable evidence ledger with provenance and confidence scores."
+      "Compiling audit-grade evidence ledger with provenance and confidence scores."
     );
 
     const evidenceLedger = compileEvidenceLedger(

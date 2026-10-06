@@ -18,11 +18,11 @@ SignalLens replaces ungrounded AI chat with a **bounded cognitive falsification 
 2. It deterministically calculates historical rate-of-change metrics and verifies peer dispersion bounds.
 3. It utilizes a **bounded 2-call LLM cognitive loop** via the **OpenAI Responses API** to formulate competing, falsifiable hypotheses, request verification tools from a strict allowlist, and challenge those hypotheses.
 4. It executes allowlisted verification tools locally against audited fundamentals.
-5. It compiles an immutable **Evidence Ledger** with provenance tags.
+5. It compiles an audit-grade **Evidence Ledger** with provenance tags.
 6. A deterministic classifier locks the outcome into one of **five neutral classifications**.
 
 > **The Epistemic Rule of SignalLens:**  
-> *"The LLM proposes explanations and investigation plans. Deterministic code decides what the data actually proves."*
+> *"The LLM proposes explanations and investigation plans. Deterministic code tests what the available data can actually support."*
 
 ---
 
@@ -30,7 +30,7 @@ SignalLens replaces ungrounded AI chat with a **bounded cognitive falsification 
 
 SignalLens is architected as an autonomous goal-directed investigation agent:
 
-- **Autonomous Multi-Stage Pipeline:** Given a target company and peer cohort, the agent decides what hypotheses to formulate, plans which verification tools to dispatch, cross-examines findings against empirical evidence, and synthesizes an immutable ledger.
+- **Autonomous Multi-Stage Pipeline:** Given a target company and peer cohort, the agent decides what hypotheses to formulate, plans which verification tools to dispatch, cross-examines findings against empirical evidence, and synthesizes an audit-grade ledger.
 - **Bounded Cognitive Loop:** Uses a strict, non-recursive 2-call architecture (Call 1: Hypothesize & Plan $\rightarrow$ Deterministic Evidence Execution $\rightarrow$ Call 2: Challenge & Revise).
 - **Strict Allowlisted Tool Execution:** The LLM cannot execute arbitrary code or browse the open web. It requests tools from a locked allowlist (`verify_period_alignment`, `audit_financial_line_items`, `audit_operating_earnings`, `audit_quarterly_momentum`, `audit_multi_period_cagr`, `check_segment_disclosures`).
 - **Epistemic Authority Separation:** LLMs are prone to hallucinating financial certainty. SignalLens solves this by separating **hypothesis proposal** (LLM) from **factual verification and classification** (deterministic code).
@@ -81,7 +81,7 @@ Judge / User Request: POST /api/investigate { target: "BBCA", peers: ["BMRI", "B
   └────────────────────────────────────────────────────────┴─────────────────────┘
        │
        ▼
-[ Step 6: Evidence Ledger Compilation ] ──> Immutable ledger with provenance & verdicts
+[ Step 6: Evidence Ledger Compilation ] ──> Audit-grade ledger with provenance & verdicts
        │
        ▼
 [ Step 7: Deterministic Classification ] ──> Strictly locked to 5 neutral classifications

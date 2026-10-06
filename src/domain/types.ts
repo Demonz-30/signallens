@@ -129,7 +129,7 @@ export interface EvidenceItem {
 }
 
 /**
- * An immutable ledger entry detailing the evidentiary audit trail.
+ * An audit-grade ledger entry detailing the evidentiary audit trail.
  */
 export interface EvidenceLedgerEntry {
   stepIndex: number;

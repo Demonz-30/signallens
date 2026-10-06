@@ -9,10 +9,10 @@
 When public companies exhibit unusual financial divergence from their peers, analysts face overwhelming filings while generic AI chatbots fabricate speculative explanations without empirical proof.
 
 ### One-Sentence Solution Statement
-SignalLens is an autonomous forensic investigation agent that audits peer anomalies against real Sectors fundamentals, plans allowlisted verification tests via a bounded 2-call LLM cognitive loop, and outputs an immutable evidence ledger locked to deterministic neutral verdicts.
+SignalLens is an autonomous forensic investigation agent that audits peer anomalies against real Sectors fundamentals, plans allowlisted verification tests via a bounded 2-call LLM cognitive loop, and outputs an audit-grade evidence ledger locked to deterministic neutral verdicts.
 
 ### Product Signature
-> *"SignalLens doesn't tell you what to invest in. It tells you what the data can actually prove."*
+> *"SignalLens doesn't tell you what to invest in. It tells you what the data can actually support."*
 
 ---
 
@@ -38,10 +38,10 @@ SignalLens is an autonomous forensic investigation agent that audits peer anomal
   *Voiceover:* "Generic LLMs don't check audited financials. They hallucinate certainty."
 - **[00:25 - 00:45] The SignalLens Agent Solution:**  
   *Visual:* SignalLens UI running live Sectors REST v2 query; 5-stage stepper animating.  
-  *Voiceover:* "Meet SignalLens. An investigation agent built on Sectors fundamentals. It doesn't chat. It calculates peer dispersion, formulates competing falsifiable hypotheses, executes allowlisted audit tools, and compiles an immutable evidence ledger."
+  *Voiceover:* "Meet SignalLens. An investigation agent built on Sectors fundamentals. It doesn't chat. It calculates peer dispersion, formulates competing falsifiable hypotheses, executes allowlisted audit tools, and compiles an audit-grade evidence ledger."
 - **[00:45 - 01:00] The Core Guarantee:**  
   *Visual:* Final classification badge locked to `PERSISTENT_DIFFERENCE` with verified evidence proofs.  
-  *Voiceover:* "The LLM proposes hypotheses. Deterministic code decides what the data actually proves. SignalLens doesn't tell you what to invest in. It tells you what the data can actually prove."
+  *Voiceover:* "The LLM proposes hypotheses. Deterministic code tests what the available data can actually support. SignalLens doesn't tell you what to invest in. It tells you what the data can actually support."
 
 ---
 
@@ -69,7 +69,7 @@ SignalLens is an autonomous forensic investigation agent that audits peer anomal
 ### [01:15 - 02:00] Deep Dive: The Evidence Ledger & Epistemic Honesty
 - **Screen:** Scroll to Evidence Ledger and Classification Card.
 - **Narrator:**
-  "Here is our Evidence Ledger. Every row is an immutable audit point with source provenance, mathematical observations, and explicit verdicts — SUPPORTED, WEAKENED, or INCONCLUSIVE.
+  "Here is our Evidence Ledger. Every row is an audit-grade record with source provenance, mathematical observations, and explicit verdicts — SUPPORTED, WEAKENED, or INCONCLUSIVE.
   Notice the outcome for this live query: `INSUFFICIENT_EVIDENCE`.
   Why? Because while BBCA outpaces peers, granular fee-income and CASA disclosures require audited footnote notes not present in summary overview reports.
   An ordinary AI would invent an answer. SignalLens declares epistemic uncertainty. It tells you exactly what public data can prove, and lists its unresolved questions."
@@ -88,7 +88,7 @@ SignalLens is an autonomous forensic investigation agent that audits peer anomal
   - It uses a bounded 2-call cognitive loop with OpenAI Responses API.
   - It enforces strict allowlisted tool execution with zero code execution vulnerabilities.
   - It makes Sectors API its indispensable foundation.
-  - Most importantly, it enforces our core principle: The LLM proposes explanations; deterministic code decides what the data actually proves.
+  - Most importantly, it enforces our core principle: The LLM proposes explanations; deterministic code tests what the available data can actually support.
   Thank you."
 
 ---
@@ -137,11 +137,11 @@ SignalLens is an autonomous forensic investigation agent built on the official S
 2. **Deterministic Outlier Detection:** Pure mathematical calculation of rate of change, peer median, interquartile spread, and z-score. Outliers are never forced.
 3. **Bounded Two-Call Cognitive Loop:** Uses the new OpenAI Responses API (`/v1/responses`) with strict JSON schemas. Call 1 formulates competing falsifiable hypotheses and requests verification tools. Call 2 cross-examines findings against empirical evidence.
 4. **Allowlisted Evidence Tool Execution:** The LLM cannot execute arbitrary code or open-web queries. It dispatches strictly allowlisted tools (`verify_period_alignment`, `audit_operating_earnings`, `audit_multi_period_cagr`, etc.) executed locally against the Sectors records.
-5. **Immutable Evidence Ledger:** Every test is logged with exact data provenance, quantitative observations, and evidence verdicts.
+5. **Audit-Grade Evidence Ledger:** Every test is logged with exact data provenance, quantitative observations, and evidence verdicts.
 6. **Deterministic Classification:** The final verdict is locked into one of five neutral enums (`PERSISTENT_DIFFERENCE`, `NO_MATERIAL_OUTLIER`, `INCOMPARABLE_DATA`, `DATA_QUALITY_RISK`, `INSUFFICIENT_EVIDENCE`). The LLM cannot alter this outcome.
 
 **Core Axiom:**  
-*"The LLM proposes explanations and investigation plans. Deterministic code decides what the data actually proves."*
+*"The LLM proposes explanations and investigation plans. Deterministic code tests what the available data can actually support."*
 
 ---
 
@@ -165,7 +165,7 @@ If you ask ChatGPT, it hallucinates a persuasive marketing story. In finance, un
 🔹 Locked neutral classifications — zero LLM hallucination of verdicts
 
 Because:
-*"SignalLens doesn't tell you what to invest in. It tells you what the data can actually prove."*
+*"SignalLens doesn't tell you what to invest in. It tells you what the data can actually support."*
 
 Built with Next.js 15 App Router, TypeScript, and Vitest.
 #SectorsHackathon #AIAgents #FinTech #OpenAI #TypeScript #FinancialAI
